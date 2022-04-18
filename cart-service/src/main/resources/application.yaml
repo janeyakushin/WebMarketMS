@@ -1,0 +1,23 @@
+server:
+  port: 8166
+  servlet:
+    context-path: /web-market-carts
+utils:
+  cart:
+    prefix: SPRING_WEB_
+integrations:
+  core-service:
+    url: http://localhost:5555/core
+    timeout:
+      connect: 2000
+      read: 10000
+      write: 2000
+  recom-service:
+    url: http://localhost:5555/recom
+    timeout:
+      connect: 2000
+      read: 10000
+      write: 2000
+constant:
+  recom-send: 600000 # рабочий интервал отправки статистики по товарам в recom-service
+#  recom-send: 6 # тестовый интервал отправки статистики по товарам в recom-service

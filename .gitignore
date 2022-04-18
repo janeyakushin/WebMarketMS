@@ -1,0 +1,9 @@
+# Project exclude paths
+/core-service/target/
+/gateway/target/
+# Project exclude paths
+/api/target/
+/auth-service/target/
+/cart-service/target/
+/front-service/target/
+/recom-service/target/

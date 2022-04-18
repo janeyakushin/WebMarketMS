@@ -1,0 +1,39 @@
+server:
+  port: 8189
+  servlet:
+    context-path: /web-market-core
+utils:
+  cart:
+    prefix: SPRING_WEB_
+spring:
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:mydatabase;MODE=PostgreSQL
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: false
+integrations:
+  cart-service:
+    url: http://localhost:5555/cart
+    timeout:
+      connect: 2000
+      read: 10000
+      write: 2000
+  recom-service:
+    url: http://localhost:5555/recom
+    timeout:
+      connect: 2000
+      read: 10000
+      write: 2000
+constant:
+  recom-send: 600000 # рабочий интервал отправки статистики по товарам в recom-service
+#  recom-send: 6 # тестовый интервал отправки статистики по товарам в recom-service
